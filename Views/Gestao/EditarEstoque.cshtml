@@ -1,0 +1,20 @@
+﻿@model sonmarket.Models.Estoque
+@{
+    Layout = "_LayoutAdmin";
+}
+<h3>Atualizar estoque</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Estoque" asp-action="Atualizar" method="POST">
+    <input type="hidden" asp-for="Id">
+    <label asp-for="ProdutoId">Produto</label>
+    <select class="form-control" asp-for="ProdutoId"
+asp-items='@(new SelectList(@ViewBag.Produtos,"Id", "Nome"))'></select>
+    <span asp-validation-for="ProdutoId"></span><br>
+
+    <label asp-for="Quantidade">Quantidade</label>
+    <input type="number" step="any" asp-for="Quantidade" class="form-control" placeholder="Quantidade">
+    <span asp-validation-for="Quantidade"></span><br>
+
+    <br>
+    <button class="btn btn-success">Atualizar</button>
+</form>

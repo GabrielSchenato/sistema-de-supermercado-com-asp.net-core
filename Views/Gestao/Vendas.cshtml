@@ -1,0 +1,48 @@
+﻿@model IEnumerable<sonmarket.Models.Venda>
+@{
+    Layout = "_LayoutAdmin";
+}
+<h2>
+    Relatório de vendas
+</h2>
+<hr />
+
+<script>
+    $(document).ready(function () {
+    $('#vendas').DataTable();
+    });
+</script>
+
+<table class="table table-striped table-bordered" id="vendas">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Total</th>
+            <th>Valor Pago</th>
+            <th>Troco</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venda in Model)
+        {
+            <tr>
+                <td>
+                    @venda.Id
+                </td>
+                <td>
+                    @venda.Data
+                </td>
+                <td>
+                    @venda.Total
+                </td>
+                <td>
+                    @venda.ValorPago
+                </td>
+                <td>
+                    @venda.Troco
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
