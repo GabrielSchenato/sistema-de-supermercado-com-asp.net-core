@@ -4,4 +4,4 @@ Restaurar os pacotes
 - dotnet restore
 
 Rodar migrations no banco
--dotnet ef database update
+- dotnet ef database update
